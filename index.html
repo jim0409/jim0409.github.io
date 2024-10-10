@@ -1,10 +1,201 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>jim0409 profile</title>
-  </head>
-  <body>
-    <h1>this is the first commit</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Jim Weng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header h3 {
+            font-size: 1.5em;
+            color: gray;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .left-column {
+            flex-basis: 60%;
+        }
+
+        .right-column {
+            flex-basis: 30%;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li span {
+            font-weight: bold;
+        }
+
+        .skills, .education, .background, .github {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .left-column, .right-column {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jim Weng</h1>
+            <!-- <h3>Senior Backend Software Engineer</h3> -->
+        </header>
+
+        <div class="main-content">
+            <div class="left-column">
+                <h2>Experience</h2>
+                <ul>
+                    <li>
+                        <span>HLW Technical Company, Taipei — Golang Team Leader</span>
+                        <h6>9 2021 - PRESENT</h6>
+                        Optimize nano framework, with performance 200% increase, and working on the other serverless services.
+                        <br></br>
+                    </li>
+                    <li>
+                        <span>Paradise Soft Technical Company, Taipei — CDN developer</span>
+                        <h6>2 2020 - 9 2021</h6>
+                        Based on openresty develop our WAF features, including dynamic upstream, anti-DDoS, rate limit, multi SSL support .. etc.
+                        <br></br>
+                    </li>
+                    <li>
+                        <span>Cloud in Cloud Company, Taoyuan — Golang Team Leader</span>
+                        <h6>6 2019 - 2 2020</h6>
+                        Manage a distributed crawler system with micro-services, assigned scheduler with redis lock, and decouple service with message queue.
+                        <br></br>
+                    </li>
+                    <li>
+                        <span>Mlytics, Taipei — Site Reliability Engineer</span>
+                        <h6>4 2018 - 6 2019</h6>
+                        Discover system weakness and solve online problems, with golang and shell script and use ELK to monitor server health.
+                        <br></br>
+                    </li>
+                    <li>
+                        <span>DiskProphet, Taichung — Golang Developer</span> 
+                        <h6>4 2017 - 4 2018</h6> 
+                        With open source govmoni and telegraf, implement VSphere metrics to monitor server and deliver to BGP via CI/CD flow.
+                        <br></br>
+                    </li>
+                </ul>
+                <h2>AWARDS</h2>
+                <ul>
+                    <li><b>lonng/nano;</b> implemented over 200,000+ rooms under monolithic architecture.</li>
+                    <li><b>influxdata/telegraf;</b> contribute extra plugin for vmware info collect via govmoni.</li>
+                    <li><b>yudai/gotty;</b> use http/ws to implement a SSH session on any browser.</li>
+                    <li><b>openresty/openresty;</b> handle 20,000+ qps under anti-DDoS with 4cpu GCP vm.</li>
+                    <li><b>wg/wrk;</b> with Luajit to custom load tests under different scenarios.</li>
+                    <li><b>CI/CD setup;</b> built up team support CI/CD flow with jenkins, docker and k8s.</li>
+                </ul>
+
+            </div>
+
+            <div class="right-column">
+                <div class="background">
+                    <h2>Contract</h2>
+                    <ul>
+                        <li>linkin: <a href="https://www.linkedin.com/in/jhen-huei-weng-a43290186/">jhen-huei-weng</a></li>
+                        <li>mail: <a href="mailto:berserker.01.tw@gmail.com">berserker.01.tw@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="education">
+                    <h2>Education</h2>
+                    <ul>
+                        <li>
+                            <span>NCKU, Tainan — Statistics Master</span> <br>
+                            <h6>9 2011 - 6 2013</h6> <br>
+                        </li>
+                        <li>
+                            <span>CCU, Chiayi — Mathematics College</span> <br>
+                            <h6>9 2007 - 1 2011</h6> <br>
+                        </li>
+                     </ul>
+                </div>
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li><b>programming:</b> golang, python, luajit, bash scripts.</li>
+                        <li><b>protocols:</b> http, tcp, websocket, rpc, grpc.</li>
+                        <li><b>framework:</b> gin, gorilla/websocket, lonng/nano, openresty/openresty .. etc.</li>
+                        <li><b>development:</b> test-driven, behavior-driven, agile.</li>
+                        <li><b>architecture:</b> monolithic ,micro-services, serverless, distributed.</li>
+                        <li><b>techstacks:</b> mysql, nginx, redis, elk, kafka, dns, kafka, nats .. etc.</li>
+                        <li><b>servers:</b> centos7, vsphere, docker, k8s(GKE/EKS).  </li>
+                        <li><b>other terms:</b> loading test, benchmark, automatic test, jenkins .. etc.</li>
+                    </ul>
+                </div>
+                <div class="github">
+                    <h2>Github</h2>
+                    <ul>
+                        <li><a href="https://github.com/jim0409" target="_blank">Github: jim0409</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
