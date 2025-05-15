@@ -29,27 +29,46 @@
         }
 
         header {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
             margin-bottom: 30px;
+            text-align: left;
         }
 
-        header h1 {
+        .header-name {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            font-weight: bold;
         }
 
-        header h3 {
-            font-size: 1.5em;
-            color: gray;
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
 
-        .contact-info {
+        .contact-row {
+            display: grid;
+            grid-template-columns: max-content 1.2em auto;
+            min-width: 320px;
+            margin-bottom: 2px;
+        }
+
+        .contact-label {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .contact-colon {
             text-align: center;
-            margin-bottom: 30px;
+            width: 1.2em;
+            font-weight: bold;
         }
 
-        .contact-info p {
-            margin: 5px 0;
+        .contact-value a {
+            color: #1976d2;
+            text-decoration: underline;
+            word-break: break-all;
         }
 
         .main-content {
@@ -99,13 +118,47 @@
                 flex-basis: 100%;
             }
         }
+
+        .leetcode-blue {
+            color: #1976d2;
+            font-weight: bold;
+        }
+        .leetcode-green {
+            color: #388e3c;
+            font-weight: bold;
+        }
     </style>
+    <script>
+        async function fetchLeetCodeStats(username) {
+            try {
+                const res = await fetch(`https://leetcode-stats-api.herokuapp.com/${username}`);
+                const data = await res.json();
+                if (data.status === 'error') {
+                    document.getElementById('leetcode-stats').innerHTML = 'Failed to fetch LeetCode stats.';
+                    return;
+                }
+                // document.getElementById('total').innerHTML = `Total Solved: <span class='leetcode-green'>${data.totalSolved}</span> / <span class='leetcode-blue'>${data.totalQuestions}</span>`;
+                document.getElementById('easy').innerHTML = `Easy: <span class='leetcode-green'>${data.easySolved}</span> / <span class='leetcode-blue'>${data.totalEasy}</span>`;
+                document.getElementById('medium').innerHTML = `Medium: <span class='leetcode-green'>${data.mediumSolved}</span> / <span class='leetcode-blue'>${data.totalMedium}</span>`;
+                document.getElementById('hard').innerHTML = `Hard: <span class='leetcode-green'>${data.hardSolved}</span> / <span class='leetcode-blue'>${data.totalHard}</span>`;
+            } catch (err) {
+                document.getElementById('leetcode-stats').innerText = 'Error fetching LeetCode data.';
+            }
+        }
+      
+        // 使用你的 LeetCode ID
+        fetchLeetCodeStats('jim0409');
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Jim Weng</h1>
-            <!-- <h3>Senior Backend Software Engineer</h3> -->
+            <div class="header-name">Jim Weng</div>
+            <div class="header-contact">
+                <div class="contact-row"><span class="contact-label">mail</span><span class="contact-colon">:</span><span class="contact-value"><a href="mailto:berserker.01.tw@gmail.com">berserker.01.tw@gmail.com</a></span></div>
+                <div class="contact-row"><span class="contact-label">linkin</span><span class="contact-colon">:</span><span class="contact-value"><a href="https://www.linkedin.com/in/jhen-huei-weng-a43290186/">jhen-huei-weng</a></span></div>
+                <div class="contact-row"><span class="contact-label">github</span><span class="contact-colon">:</span><span class="contact-value"><a href="https://github.com/jim0409" target="_blank">jim0409</a></span></div>
+            </div>
         </header>
 
         <div class="main-content">
@@ -152,16 +205,19 @@
                     <li><b>wg/wrk;</b> with Luajit to custom load tests under different scenarios.</li>
                     <li><b>CI/CD setup;</b> built up team support CI/CD flow with jenkins, docker and k8s.</li>
                 </ul>
-
             </div>
 
             <div class="right-column">
                 <div class="background">
-                    <h2>Contract</h2>
-                    <ul>
-                        <li>linkin: <a href="https://www.linkedin.com/in/jhen-huei-weng-a43290186/">jhen-huei-weng</a></li>
-                        <li>mail: <a href="mailto:berserker.01.tw@gmail.com">berserker.01.tw@gmail.com</a></li>
-                    </ul>
+                    <div id="leetcode-stats">
+                        <h2>LeetCode Stats</h2>
+                        <ul>
+                            <!-- <li><p id="total"></p></li> -->
+                            <li><p id="easy"></p></li>
+                            <li><p id="medium"></p></li>
+                            <li><p id="hard"></p></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="education">
                     <h2>Education</h2>
@@ -187,12 +243,6 @@
                         <li><b>techstacks:</b> mysql, nginx, redis, elk, kafka, dns, kafka, nats .. etc.</li>
                         <li><b>servers:</b> centos7, vsphere, docker, k8s(GKE/EKS).  </li>
                         <li><b>other terms:</b> loading test, benchmark, automatic test, jenkins .. etc.</li>
-                    </ul>
-                </div>
-                <div class="github">
-                    <h2>Github</h2>
-                    <ul>
-                        <li><a href="https://github.com/jim0409" target="_blank">Github: jim0409</a></li>
                     </ul>
                 </div>
             </div>
